@@ -10,6 +10,8 @@
       - "external_request_lane_change_right"
       - "lane_change_left"
       - "lane_change_right"
+      - "avoidance_by_lane_change_left"
+      - "avoidance_by_lane_change_right"
       - "avoidance_left"
       - "avoidance_right"
       # - "pull_over"
