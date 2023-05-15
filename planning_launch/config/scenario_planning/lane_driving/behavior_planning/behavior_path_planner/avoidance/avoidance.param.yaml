@@ -56,17 +56,17 @@
           safety_buffer_lateral: 0.7
           safety_buffer_longitudinal: 0.0
         bicycle:
-          enable: true
+          enable: false
           envelope_buffer_margin: 0.8
           safety_buffer_lateral: 1.0
           safety_buffer_longitudinal: 1.0
         motorcycle:
-          enable: true
+          enable: false
           envelope_buffer_margin: 0.8
           safety_buffer_lateral: 1.0
           safety_buffer_longitudinal: 1.0
         pedestrian:
-          enable: true
+          enable: false
           envelope_buffer_margin: 0.8
           safety_buffer_lateral: 1.0
           safety_buffer_longitudinal: 1.0
