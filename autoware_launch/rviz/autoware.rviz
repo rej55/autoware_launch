@@ -1714,10 +1714,77 @@ Visualization Manager:
                             Value: /planning/scenario_planning/lane_driving/behavior_planning/behavior_velocity_planner/debug/run_out
                           Value: false
                         - Class: rviz_default_plugins/MarkerArray
-                          Enabled: false
+                          Enabled: true
                           Name: Avoidance
                           Namespaces:
-                            {}
+                          # old config
+                            c_0_merged: false
+                            c_1_trim_similar_grad_shift: false
+                            c_2_quantized: false
+                            c_3_trim_small_shift: false
+                            c_4_trim_similar_grad_shift: false
+                            c_5_trim_momentary_return: false
+                            c_6_trim_too_sharp_shift: false
+                            c_7_trim_too_sharp_shift: true
+                            m_output_linear_line: false
+                            m_output_shift_line: false
+                            m_pos_shift_line: false
+                            m_neg_shift_line: false
+                            m_pos_grad: false
+                            m_neg_grad: false
+                            m_forward_grad: false
+                            m_backward_grad: false
+                            m_total_shift_line: false
+                            m_gap_filled: false
+                            registered_linear_path: false
+                            proposed_spline_path: false
+                            prev_linear_shift: false
+                          # new config
+                            shift_length_pos: false
+                            shift_length_neg: false
+                            shift_length_total: false
+                            shift_grad_pos: false
+                            shift_grad_neg: false
+                            shift_grad_total_forward: false
+                            shift_grad_total_backward: false
+                            shift_line_linear_registered: false
+                            shift_line_spline_proposed: false
+                            pipeline_1_gap_filled: false
+                            pipeline_2_merge: false
+                            pipeline_3_concat_by_grad: false
+                            pipeline_4_quantized: false
+                            pipeline_5_trim_small_shift: false
+                            pipeline_6_concat_by_grad: false
+                            pipeline_7_trim_momentary_return: false
+                            pipeline_8_trim_sharp_shift: false
+                            pipeline_9_concat_by_grad: false
+                            p_registered_shift: false
+                            p_current_raw_shift: true
+                            p_extra_return_shift: false
+                            path_shifter_proposed_points: true
+                            path_shifter_registered_points: true
+                            predicted_vehicle_positions: false
+                            predicted_vehicle_positions_text: false
+                            others_out_of_target_area_cube: false
+                            others_out_of_target_area_info: false
+                            others_object_is_not_type_cube: false
+                            others_object_is_not_type_info: false
+                            others_moving_object_info: false
+                            others_not_need_avoidance_info: false
+                            others_less_than_execution_threshold_info: false
+                            others_not_parking_object_info: false
+                            others_object_is_behind_threshold_info: false
+                            others_object_is_in_front_threshold_info: false
+                            others_object_behind_path_goal_info: false
+                            others_too_near_to_centerline_info: false
+                            linestring_id: false
+                            longitudinal_margin: false
+                            centerline: false
+                            centerline_resampled: false
+                            current_lanelet: false
+                            expanded_lanelet: false
+                            reference_pose: false
+                            overhang: false
                           Topic:
                             Depth: 5
                             Durability Policy: Volatile
@@ -1785,7 +1852,7 @@ Visualization Manager:
                             Reliability Policy: Reliable
                             Value: /planning/scenario_planning/lane_driving/behavior_planning/behavior_path_planner/debug/sideshift
                           Value: false
-                      Enabled: false
+                      Enabled: true
                       Name: DebugMarker
                     - Class: rviz_common/Group
                       Displays:
