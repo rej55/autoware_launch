@@ -22,6 +22,7 @@
       enable_force_avoidance_for_stopped_vehicle: true
       enable_safety_check: true
       enable_yield_maneuver: true
+      enable_yield_maneuver_during_shifting: false
       disable_path_update: false
 
       # for debug
