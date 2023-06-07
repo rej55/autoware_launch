@@ -1777,8 +1777,8 @@ Visualization Manager:
                             others_object_is_in_front_threshold_info: false
                             others_object_behind_path_goal_info: false
                             others_too_near_to_centerline_info: false
+                            safety_longitudinal_margin: false
                             linestring_id: false
-                            longitudinal_margin: false
                             centerline: false
                             centerline_resampled: false
                             current_lanelet: false
