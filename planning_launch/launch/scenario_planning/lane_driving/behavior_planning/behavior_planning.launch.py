@@ -25,7 +25,6 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration
 from launch.substitutions import PythonExpression
 from launch_ros.actions import ComposableNodeContainer
-from launch_ros.actions import SetParameter
 from launch_ros.descriptions import ComposableNode
 from launch_ros.substitutions import FindPackageShare
 import yaml
@@ -41,6 +40,16 @@ def generate_launch_description():
     )
     with open(nearest_search_param_path, "r") as f:
         nearest_search_param = yaml.safe_load(f)["/**"]["ros__parameters"]
+
+    common_param_path = os.path.join(
+        get_package_share_directory("planning_launch"),
+        "config",
+        "scenario_planning",
+        "common",
+        "common.param.yaml",
+    )
+    with open(common_param_path, "r") as f:
+        common_param = yaml.safe_load(f)["/**"]["ros__parameters"]
 
     # behavior path planner
     side_shift_param_path = os.path.join(
@@ -163,6 +172,7 @@ def generate_launch_description():
             ("~/output/modified_goal", "/planning/scenario_planning/modified_goal"),
         ],
         parameters=[
+            common_param,
             nearest_search_param,
             side_shift_param,
             avoidance_param,
@@ -193,16 +203,6 @@ def generate_launch_description():
     )
 
     # smoother param
-    common_param_path = os.path.join(
-        get_package_share_directory("planning_launch"),
-        "config",
-        "scenario_planning",
-        "common",
-        "common.param.yaml",
-    )
-    with open(common_param_path, "r") as f:
-        common_param = yaml.safe_load(f)["/**"]["ros__parameters"]
-
     motion_velocity_smoother_param_path = os.path.join(
         get_package_share_directory("planning_launch"),
         "config",

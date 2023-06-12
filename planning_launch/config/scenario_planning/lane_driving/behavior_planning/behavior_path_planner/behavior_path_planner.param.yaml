@@ -1,6 +1,6 @@
 /**:
   ros__parameters:
-    verbose: true
+    verbose: false
 
     groot_zmq_publisher_port: 1666
     groot_zmq_server_port: 1667
@@ -31,6 +31,7 @@
 
     lateral_distance_max_threshold: 2.0
     longitudinal_distance_min_threshold: 3.0
+    longitudinal_velocity_delta_time: 0.8 # [s]
 
     expected_front_deceleration: -1.0
     expected_rear_deceleration: -1.0
@@ -46,8 +47,9 @@
       drivable_area_left_bound_offset: 0.0
       drivable_area_types_to_skip: [road_border]
 
-    lane_change:
-      lane_change_prepare_duration: 4.0 # [s]
+    closest_lanelet:
+      distance_threshold: 5.0 # [m]
+      yaw_threshold: 0.79 # [rad]
 
 # USE ONLY WHEN THE OPTION COMPILE_WITH_OLD_ARCHITECTURE IS SET TO FALSE.
 # https://github.com/autowarefoundation/autoware.universe/blob/main/planning/behavior_path_planner/CMakeLists.txt
@@ -80,25 +82,11 @@
       priority: 5
       max_module_size: 1
 
-    pull_out:
-      enable_module: true
-      enable_simultaneous_execution_as_approved_module: false
-      enable_simultaneous_execution_as_candidate_module: false
-      priority: 0
-      max_module_size: 1
-
     side_shift:
       enable_module: true
       enable_simultaneous_execution_as_approved_module: false
       enable_simultaneous_execution_as_candidate_module: false
       priority: 2
-      max_module_size: 1
-
-    pull_over:
-      enable_module: true
-      enable_simultaneous_execution_as_approved_module: false
-      enable_simultaneous_execution_as_candidate_module: false
-      priority: 1
       max_module_size: 1
 
     avoidance:
